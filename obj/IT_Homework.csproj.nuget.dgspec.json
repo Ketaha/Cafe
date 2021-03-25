@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\IT_Homework\\IT_Homework.csproj": {}
+    "f:\\IT_Homework\\IT_Homework.csproj": {}
   },
   "projects": {
-    "F:\\IT_Homework\\IT_Homework.csproj": {
+    "f:\\IT_Homework\\IT_Homework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\IT_Homework\\IT_Homework.csproj",
+        "projectUniqueName": "f:\\IT_Homework\\IT_Homework.csproj",
         "projectName": "IT_Homework",
-        "projectPath": "F:\\IT_Homework\\IT_Homework.csproj",
+        "projectPath": "f:\\IT_Homework\\IT_Homework.csproj",
         "packagesPath": "C:\\Users\\Ketaha\\.nuget\\packages\\",
-        "outputPath": "F:\\IT_Homework\\obj\\",
+        "outputPath": "f:\\IT_Homework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ketaha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.407\\RuntimeIdentifierGraph.json"
         }
       }
     }

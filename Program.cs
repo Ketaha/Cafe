@@ -13,18 +13,18 @@ namespace IT_Homework
         private const string cnxn = "Server=localhost; Database=Cafe; Integrated Security = True";
         
         private const string MONEY_FORMAT = "{0:0.00}";
+            
+        private static CafeContext context = new CafeContext();
 
         static void Main(string[] args)
         {
-            var context = new CafeContext();
-
             while (true)
             {
                 using (SqlConnection sql = new SqlConnection(cnxn))
                 {
-                    System.Console.Write("Enter option: ");
+                    Console.Write("Enter option: ");
                     var options = Console.ReadKey();
-                    System.Console.WriteLine();
+                    Console.WriteLine();
                     sql.Open();
 
                     switch (options.Key)
@@ -41,7 +41,7 @@ namespace IT_Homework
 
                                 command.ExecuteNonQuery();
                             }
-                            break;
+                        break;
 
                         // Change status of isServed to 'true'
                         case ConsoleKey.B:
@@ -49,7 +49,7 @@ namespace IT_Homework
                             context.Orders.FirstOrDefault(c => c.Id == int.Parse(Console.ReadLine())).IsServed = true;
 
                             context.SaveChanges();
-                            break;
+                        break;
 
                         // Remove order
                         case ConsoleKey.C:
@@ -57,14 +57,14 @@ namespace IT_Homework
                             context.Orders.Remove(context.Orders.FirstOrDefault(c => c.Id == int.Parse(Console.ReadLine())));
 
                             context.SaveChanges();
-                            break;
+                        break;
 
                         // Print table orders
                         case ConsoleKey.E:
                             Console.WriteLine($"Print all?: Y / N");
                             var printAll = Console.ReadKey();
-                            System.Console.WriteLine();
-                            string comm = "SELECT * FROM V_AllTabs ";
+                            Console.WriteLine();
+                            var comm = "SELECT * FROM V_AllTabs ";
                             
                             if (printAll.Key == ConsoleKey.N) {
                                 Console.Write($"TableId: ");
@@ -76,8 +76,9 @@ namespace IT_Homework
                                     while (reader.Read()) 
                                         ReadSingleRow((IDataRecord)reader);
 
-                            void ReadSingleRow(IDataRecord record) => Console.WriteLine($"{record[0]}, {record[1]} за маса {record[2]} с цена {string.Format(MONEY_FORMAT, record[4])}. Сервирано?: {record[3]}");
-                            break;
+                            void ReadSingleRow(IDataRecord record) => Console.WriteLine($"{record[0]}, {record[1]} за маса {record[2]}" + 
+                            " с цена {string.Format(MONEY_FORMAT, record[4])}. Сервирано?: {record[3]}");
+                        break;
                         
                         // Close tab or check amount owned
                         case ConsoleKey.D:
@@ -97,7 +98,7 @@ namespace IT_Homework
                                     context.SaveChanges();
                                 }
                             }
-                            break;
+                        break;
 
                         // End day
                         case ConsoleKey.Z:
@@ -105,7 +106,8 @@ namespace IT_Homework
                                 command.ExecuteNonQuery();
                                 Environment.Exit(0);
                             }
-                            break;
+                        break;
+
                     }
                 }
             }
