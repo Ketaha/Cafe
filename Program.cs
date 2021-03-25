@@ -107,7 +107,6 @@ namespace IT_Homework
                                 Environment.Exit(0);
                             }
                         break;
-
                     }
                 }
             }
