@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "f:\\IT_Homework\\IT_Homework.csproj": {}
+    "F:\\IT_Homework\\IT_Homework.csproj": {}
   },
   "projects": {
-    "f:\\IT_Homework\\IT_Homework.csproj": {
+    "F:\\IT_Homework\\IT_Homework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "f:\\IT_Homework\\IT_Homework.csproj",
+        "projectUniqueName": "F:\\IT_Homework\\IT_Homework.csproj",
         "projectName": "IT_Homework",
-        "projectPath": "f:\\IT_Homework\\IT_Homework.csproj",
+        "projectPath": "F:\\IT_Homework\\IT_Homework.csproj",
         "packagesPath": "C:\\Users\\Ketaha\\.nuget\\packages\\",
-        "outputPath": "f:\\IT_Homework\\obj\\",
+        "outputPath": "F:\\IT_Homework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ketaha\\AppData\\Roaming\\NuGet\\NuGet.Config",
