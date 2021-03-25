@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Linq;
 using Microsoft.Data.SqlClient;
@@ -107,7 +107,6 @@ namespace IT_Homework
                                 Environment.Exit(0);
                             }
                         break;
-
                     }
                 }
             }
