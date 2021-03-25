@@ -100,6 +100,39 @@ namespace IT_Homework
                             }
                         break;
 
+                        // Извлечение за период
+                        case ConsoleKey.F:
+                        using (var command = new SqlCommand("udp_ProfitReportForPeriod", sql) {
+                                CommandType = CommandType.StoredProcedure
+                            }) {
+                                Console.WriteLine("Поръчки за период.{0} Начало на извлечение: ", Environment.NewLine);
+                                var start = DateTime.Parse(Console.ReadLine());
+                                Console.WriteLine("End: ");
+                                var end = DateTime.Parse(Console.ReadLine());
+
+                                command.Parameters.AddWithValue("startPeriod", start);
+                                command.Parameters.AddWithValue("endPeriod", end);
+
+                                using (SqlDataReader reader = command.ExecuteReader()) {
+                                    while (reader.Read()) {
+                                        _ReadSingleRow((IDataRecord)reader);
+                                    }
+                                }
+
+                                void _ReadSingleRow(IDataRecord record) => Console.WriteLine($"Получение пари - {string.Format(MONEY_FORMAT, record[1])}, за ден {record[2]}");
+                            }
+                        break;
+
+                        // Оборот за ден / период
+                        case ConsoleKey.G:
+                            var groupSum = DateTime.Parse(Console.ReadLine());
+                            var temp = DateTime.Parse(Console.ReadLine());
+                            var result = context.Profits.GroupBy(o => o.EarnedOn >= groupSum && o.EarnedOn <= temp).Select(g => new { membername = g.Key, total = g.Sum(i => i.Profit1) });
+
+                            foreach (var singleRow in result)
+                                Console.WriteLine("Оборот за ден/период - {0}", string.Format(MONEY_FORMAT, singleRow.total));
+                        break;
+
                         // End day
                         case ConsoleKey.Z:
                             using (var command = new SqlCommand("TRUNCATE TABLE Orders; DBCC CHECKIDENT (Orders, reseed, 0)", sql)) {
