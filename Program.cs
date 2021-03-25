@@ -16,7 +16,7 @@ namespace IT_Homework
             
         private static CafeContext context = new CafeContext();
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             while (true)
             {
