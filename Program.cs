@@ -125,12 +125,21 @@ namespace IT_Homework
 
                         // Оборот за ден / период
                         case ConsoleKey.G:
-                            var groupSum = DateTime.Parse(Console.ReadLine());
-                            var temp = DateTime.Parse(Console.ReadLine());
-                            var result = context.Profits.GroupBy(o => o.EarnedOn >= groupSum && o.EarnedOn <= temp).Select(g => new { membername = g.Key, total = g.Sum(i => i.Profit1) });
+                            var beginPeriod = DateTime.Parse(Console.ReadLine());
+                            var endPeriod = DateTime.Parse(Console.ReadLine());
 
-                            foreach (var singleRow in result)
-                                Console.WriteLine("Оборот за ден/период - {0}", string.Format(MONEY_FORMAT, singleRow.total));
+                            var dayEquality = beginPeriod.Equals(endPeriod);
+
+                            if (dayEquality) 
+                                endPeriod = endPeriod.AddDays(1);
+
+                            var sum = context
+                            .Profits
+                            .Where(x => x.EarnedOn >= beginPeriod && x.EarnedOn <= endPeriod)
+                            .Select(c => c.Profit1)
+                            .ToList().Sum();
+
+                            Console.WriteLine(dayEquality ? $"Profit for day {beginPeriod}: {sum}" : $"Profit for period from {beginPeriod} to {endPeriod}: {string.Format(MONEY_FORMAT, sum)}");
                         break;
 
                         // End day
