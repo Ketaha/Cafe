@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XkHEY1RcXiBedjHQbj1QQuJ2ES1Qxwc735iIxaicxeBPVFAyrf/+5tjhV5THgSfSyMKt4eVEypO51SyOoNQIiA==",
+  "dgSpecHash": "d+9yrGQ6+QCV8xgMBvXlVFuV6wrExUrUz7gSYOyIlNZvN+iuvpisc3ITAHR5zHK3MArGdaJ9lnkdCF77vpiwNw==",
   "success": true,
-  "projectFilePath": "F:\\IT_Homework\\IT_Homework.csproj",
+  "projectFilePath": "f:\\IT_Homework\\IT_Homework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ketaha\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Ketaha\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
