@@ -21,7 +21,7 @@ namespace IT_Homework
             while (true)
             {
                 using (SqlConnection sql = new SqlConnection(cnxn))
-                {
+                { 
                     Console.Write("Enter option: ");
                     var options = Console.ReadKey();
                     Console.WriteLine();
@@ -77,7 +77,7 @@ namespace IT_Homework
                                         ReadSingleRow((IDataRecord)reader);
 
                             void ReadSingleRow(IDataRecord record) => Console.WriteLine($"{record[0]}, {record[1]} за маса {record[2]}" + 
-                            " с цена {string.Format(MONEY_FORMAT, record[4])}. Сервирано?: {record[3]}");
+                            $" с цена {string.Format(MONEY_FORMAT, record[4])}. Сервирано?: {record[3]}");
                         break;
                         
                         // Close tab or check amount owned
